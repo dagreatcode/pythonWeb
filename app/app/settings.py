@@ -25,7 +25,7 @@ SECRET_KEY = '=z9lm=#lo8(rk&a!nxq+cd9q=6bh()d3iu%yu-r6xex9oj+s8#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'pythondjangoapp.herokuapp.com']
 
 # Application definition
 
@@ -81,11 +81,6 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
-        'USER': '<user_name>',
-        'PASSWORD': '<password>',
-        'HOST': 'localhost',
-        'PORT': '',
-
     }
 }
 
@@ -128,8 +123,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-…
-# Configure Django App for Heroku.
 import django_heroku
 # Activate Django-Heroku.
 django_heroku.settings(locals())
