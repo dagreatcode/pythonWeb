@@ -8,7 +8,15 @@ def home(request):
     return HttpResponse(response)
 
 def index(request):
-    return render(request, 'users/index.html', {})
+    return render(request, 'users/index.html', {
+        'header': 'Python Web',
+        'name': 'Vincent Kendrick\'s Deal',
+        'tasks': [
+            'study',
+            'family',
+            'study more'
+        ]
+    })
 
 def detail(request):
     return HttpResponse("<h1>Details Page</h1>")

@@ -1,9 +1,23 @@
 {% extends 'users/layout.html' %}
-
-{% block title %}
-    Welcome To Index 
-{% endblock %}
-
+{% block title %} Welcome To Index {% endblock %}
 {% block content %}
-    <h1>Welcome To Django</h1>
+<h1>Welcome To Django</h1>
+<div class="container">
+  <div class="jumbotron text-center">
+    <h1>{{header}}</h1>
+    <div>
+        {% if name %}
+            <h2>Hello, {{ name }}</h2>
+        {% else %}
+            <h2>Hello, Vincent</h2>
+        {% endif %}
+        <ul>
+            {% for task in tasks %}
+                <li>{{ task }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    </div>
+  </div>
+</div>
 {% endblock %}
