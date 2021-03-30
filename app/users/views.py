@@ -15,3 +15,9 @@ def index(request):
         </p>
     """
     return HttpResponse(response)
+
+def detail(request):
+    return HttpResponse("<h1>Details Page</h1>")
+
+def add(request):
+    return HttpResponse("<h1>Add Page</h1>")
