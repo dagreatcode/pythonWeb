@@ -12,8 +12,11 @@ python3 -m virtualenv env
 source env/bin/activate
 python3 -m pip install Django
 django-admin startproject app
+python3 manage.py runserver
 tree
 cd app
 app>tree
 code .
 python3 manage.py startapp users
+python3 manage.py runserver
+python3 manage.py migrate
