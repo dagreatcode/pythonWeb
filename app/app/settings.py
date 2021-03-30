@@ -126,3 +126,6 @@ STATIC_URL = '/static/'
 import django_heroku
 # Activate Django-Heroku.
 django_heroku.settings(locals())
+
+
+# Deploy
