@@ -8,13 +8,7 @@ def home(request):
     return HttpResponse(response)
 
 def index(request):
-    response = """
-        <h1>Hello, it's me</h1>
-        <p>
-        klsklsnsknjlnklnklnkjlnjklnlkjnlknklnklnkn
-        </p>
-    """
-    return HttpResponse(response)
+    return render(request, 'users/index.html', {})
 
 def detail(request):
     return HttpResponse("<h1>Details Page</h1>")
