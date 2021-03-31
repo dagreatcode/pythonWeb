@@ -4,8 +4,12 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-requests = "*"
+dj-database-url = "*"
+gunicorn = "*"
 whitenoise = "*"
+django-heroku = "*"
+django = "*"
+filelock = "*"
 
 [dev-packages]
 
