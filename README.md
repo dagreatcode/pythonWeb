@@ -20,3 +20,9 @@ code .
 python3 manage.py startapp users
 python3 manage.py runserver
 python3 manage.py migrate
+pip3 freeze > requirements.txt
+heroku buildpacks:set heroku/python
+
+https://pythondjangoapp.herokuapp.com/
+pipenv install requests
+heroku buildpacks:set heroku/python  

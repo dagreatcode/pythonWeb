@@ -20,8 +20,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 # import os
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '=z9lm=#lo8(rk&a!nxq+cd9q=6bh()d3iu%yu-r6xex9oj+s8#'
-# SECRET_KEY = os.environ.get('=z9lm=#lo8(rk&a!nxq+cd9q=6bh()d3iu%yu-r6xex9oj+s8#')
+# SECRET_KEY = '=z9lm=#lo8(rk&a!nxq+cd9q=6bh()d3iu%yu-r6xex9oj+s8#'
+SECRET_KEY = os.environ.get('=z9lm=#lo8(rk&a!nxq+cd9q=6bh()d3iu%yu-r6xex9oj+s8#')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -83,6 +83,8 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+db_from_env = dj_database_url.config(conn_max_age=600)
+DATABASES['default'].update(db_from_env)
 
 
 # Password validation
@@ -121,15 +123,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
-#STATICFILES_DIRS = (
- #   os.path.join(BASE_DIR, 'static'),
-#)
+STATICFILES_DIRS = (
+   os.path.join(BASE_DIR, 'static'),
+)
 
-#MEDIA_URL = "/media/"
-#MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 import django_heroku
